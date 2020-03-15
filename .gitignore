@@ -1,0 +1,4 @@
+*.tar.gz
+.terraform/
+*tfstate*
+plan
