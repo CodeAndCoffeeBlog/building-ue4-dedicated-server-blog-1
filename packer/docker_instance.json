@@ -8,7 +8,12 @@
             "ssh_username": "ec2-user",
             "ami_name": "ue4-server-host-{{ timestamp }}",
             "access_key": "{{user `aws_access_key`}}",
-            "secret_key": "{{user `aws_secret_key`}}"
+            "secret_key": "{{user `aws_secret_key`}}",
+            "launch_block_device_mappings": [{
+                "device_name": "/dev/xvda",
+                "volume_size": 15,
+                "delete_on_termination": true
+            }]
         }
     ],
     "provisioners": [
